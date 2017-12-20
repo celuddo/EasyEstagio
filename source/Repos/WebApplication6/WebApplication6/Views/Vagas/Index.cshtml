@@ -1,0 +1,76 @@
+﻿@model IEnumerable<EasyEstagio.Models.Vagas>
+
+@*@{
+    ViewBag.Title = "Index";
+}*@
+
+@*<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+
+
+<h1>Vagas</h1>
+
+
+<table class="table-info">
+<table class="table table-striped table-hover table-bordered">
+    <thead class="thead-dark">
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Atividades)
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.PreRequisitos)*@
+            Pré-Requisitos
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.CargaHoraria)*@
+            Carga Horária
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Beneficios)*@
+            Benefícios
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.PalavrasChave)*@
+            Palavras-Chave
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Atividades)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PreRequisitos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CargaHoraria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Beneficios)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PalavrasChave)
+            </td>
+            @*<td>
+                @Html.ActionLink("Edit", "Edit", new {id = item.Id}) |
+                @Html.ActionLink("Details", "Details", new {id = item.Id}) |
+                @Html.ActionLink("Delete", "Delete", new {id = item.Id})
+            </td>*@
+        </tr>
+    }
+
+</table>
