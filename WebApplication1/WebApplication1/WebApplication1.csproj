@@ -194,7 +194,9 @@
     <Compile Include="Controllers\EstudantesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\VagasController.cs" />
+    <Compile Include="CustomFilters\AuthLogAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -287,11 +289,16 @@
     <Content Include="Views\Empresas\Delete.cshtml" />
     <Content Include="Views\Empresas\Details.cshtml" />
     <Content Include="Views\Empresas\Edit.cshtml" />
-    <Content Include="Views\Empresas\Index.cshtml" />
+    <Content Include="Views\Empresas\List.cshtml" />
     <Content Include="Views\Estudantes\Create.cshtml" />
     <Content Include="Views\Estudantes\Delete.cshtml" />
     <Content Include="Views\Estudantes\Details.cshtml" />
     <Content Include="Views\Estudantes\Edit.cshtml" />
+    <Content Include="Views\Estudantes\List.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Shared\AuthorizeFailed.cshtml" />
+    <Content Include="Views\Empresas\Index.cshtml" />
     <Content Include="Views\Estudantes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />

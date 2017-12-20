@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using EasyEstagio.Models;
+using WebApplication1.CustomFilters;
 
 namespace EasyEstagio.Controllers
 {
@@ -14,11 +15,13 @@ namespace EasyEstagio.Controllers
     {
         private EstudantesDBContext db = new EstudantesDBContext();
 
+        [AuthLog(Roles = "Estudante")]
         // GET: Estudantes
         public ActionResult Index()
         {
             return View(db.Estudantes.ToList());
         }
+        [AuthLog(Roles = "Admin")]
 
         // GET: Estudantes/Details/5
         public ActionResult Details(int? id)
@@ -35,11 +38,14 @@ namespace EasyEstagio.Controllers
             return View(estudantes);
         }
 
+        [AuthLog(Roles = "Estudante")]
+
         // GET: Estudantes/Create
         public ActionResult Create()
         {
             return View();
         }
+        [AuthLog(Roles = "Estudante")]
 
         // POST: Estudantes/Create
         // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
@@ -57,6 +63,7 @@ namespace EasyEstagio.Controllers
 
             return View(estudantes);
         }
+        [AuthLog(Roles = "Admin")]
 
         // GET: Estudantes/Edit/5
         public ActionResult Edit(int? id)
@@ -72,10 +79,13 @@ namespace EasyEstagio.Controllers
             }
             return View(estudantes);
         }
+        [AuthLog(Roles = "Admin")]
 
         // POST: Estudantes/Edit/5
         // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
+        [AuthLog(Roles = "Admin")]
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Nome,Senha,Endereço,Instituição,Curso,Semestre,EstáProcurandoVagas")] Estudantes estudantes)
@@ -88,6 +98,7 @@ namespace EasyEstagio.Controllers
             }
             return View(estudantes);
         }
+        [AuthLog(Roles = "Admin")]
 
         // GET: Estudantes/Delete/5
         public ActionResult Delete(int? id)
@@ -103,6 +114,7 @@ namespace EasyEstagio.Controllers
             }
             return View(estudantes);
         }
+        [AuthLog(Roles = "Admin")]
 
         // POST: Estudantes/Delete/5
         [HttpPost, ActionName("Delete")]
