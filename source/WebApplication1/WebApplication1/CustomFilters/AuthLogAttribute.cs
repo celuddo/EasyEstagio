@@ -13,6 +13,9 @@ namespace WebApplication1.CustomFilters
             View = "AuthorizeFailed";
         }
 
+
+
+
         public string View { get; set; }
 
         /// <summary>
